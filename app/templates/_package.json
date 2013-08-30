@@ -1,0 +1,21 @@
+{
+  "name": "<%= _.slugify(projectName) %>",
+  "version": "0.0.0",
+   "description": "Sample Jader Project",
+  "dependencies": {
+  },
+  <% if (gitUser) { %>
+   "repository": {
+    "type": "git",
+    "url": "git://github.com/<%=gitUser%>/<%= _.slugify(projectName) %>.git"
+  },
+  <%}%>
+  "devDependencies": {
+  	"grunt": "~0.4.1",
+    "grunt-contrib-watch": "~0.5.2",
+   <% if (jadeModule) { %> "grunt-contrib-jade": "~0.8.0", <% }%>
+   <% if (stylusModule) { %>  "grunt-contrib-stylus": "~0.8.0", <% }%>
+    "grunt-contrib-connect": "~0.3.0",
+    "grunt-open": "~0.2.2"
+  }
+}

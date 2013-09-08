@@ -73,12 +73,20 @@ GeneratorJaderGenerator.prototype.askForModules = function askForModules() {
 
 GeneratorJaderGenerator.prototype.app = function app() {
   this.mkdir('app');
-  this.mkdir('app/views');
-  this.mkdir('app/public');
-  this.mkdir('app/public/css');
-  this.mkdir('app/public/js');
-  this.mkdir('app/public/assets');
+  this.mkdir('app/views');  
+  this.mkdir('app/views/layouts');  
+  this.mkdir('app/views/layouts/partials');  
   this.mkdir('app/styles');
+  this.mkdir('app/js');
+  this.mkdir('app/assets');
+
+  this.template('jade/index.jade', 'app/jade/index.jade');
+  this.template('jade/layouts/_layout.jade', 'app/jade/layouts/_layout.jade');
+  this.template('jade/layouts/partials/_footer.jade', 'app/jade/layouts/partianls/_footer.jade');
+  this.template('jade/layouts/partials/_header.jade', 'app/jade/layouts/partianls/_header.jade');
+  this.template('jade/layouts/partials/_html-header.jade', 'app/jade/layouts/partianls/_html-header.jade');
+  
+  this.template('_style.styl', 'style.styl');
   
   this.template('Gruntfile.js', 'Gruntfile.js');
   
@@ -87,6 +95,5 @@ GeneratorJaderGenerator.prototype.app = function app() {
 };
 
 GeneratorJaderGenerator.prototype.projectfiles = function projectfiles() {
-  this.copy('editorconfig', '.editorconfig');
   this.copy('jshintrc', '.jshintrc');
 };

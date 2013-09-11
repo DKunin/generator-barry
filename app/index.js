@@ -72,6 +72,9 @@ GeneratorJaderGenerator.prototype.askForModules = function askForModules() {
 
 
 GeneratorJaderGenerator.prototype.app = function app() {
+  var viewsFolder = 'app/views/';
+  
+  //Folders
   this.mkdir('app');
   this.mkdir('app/views');  
   this.mkdir('app/views/layouts');  
@@ -79,17 +82,19 @@ GeneratorJaderGenerator.prototype.app = function app() {
   this.mkdir('app/styles');
   this.mkdir('app/js');
   this.mkdir('app/assets');
-
-  this.template('jade/index.jade', 'app/jade/index.jade');
-  this.template('jade/layouts/_layout.jade', 'app/jade/layouts/_layout.jade');
-  this.template('jade/layouts/partials/_footer.jade', 'app/jade/layouts/partianls/_footer.jade');
-  this.template('jade/layouts/partials/_header.jade', 'app/jade/layouts/partianls/_header.jade');
-  this.template('jade/layouts/partials/_html-header.jade', 'app/jade/layouts/partianls/_html-header.jade');
+ 
+  //Views
+  this.template('jade/index.jade', viewsFolder+'index.jade');
+  this.template('jade/layouts/_layout.jade', viewsFolder + '/layouts/_layout.jade');
+  this.template('jade/layouts/partials/_footer.jade', viewsFolder + '/layouts/partials/_footer.jade');
+  this.template('jade/layouts/partials/_header.jade', viewsFolder + '/layouts/partials/_header.jade');
+  this.template('jade/layouts/partials/_html-header.jade', viewsFolder +'/layouts/partials/_html-header.jade');
   
-  this.template('_style.styl', 'style.styl');
+  //Styles
+  this.template('_style.styl', 'app/styles/style.styl');
   
+  //DevFiles
   this.template('Gruntfile.js', 'Gruntfile.js');
-  
   this.template('_package.json', 'package.json');
   this.template('_bower.json', 'bower.json');
 };

@@ -30,7 +30,7 @@ module.exports = function(grunt) {
           options: {
             livereload: false
           },
-        },
+        }
     }
   });
 

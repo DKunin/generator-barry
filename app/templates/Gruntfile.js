@@ -20,10 +20,12 @@ var mountFolder = function (connect, dir) {
 };
 
   var globalConfig = {
-    src: 'src',
+    app: 'app',
     dist: 'dist'
   };
-
+  try {
+    globalConfig.app = require('./bower.json').appPath || globalConfig.app;
+  } catch (e) {}
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
   grunt.initConfig({  
@@ -36,13 +38,13 @@ var mountFolder = function (connect, dir) {
     jade: {
       compile: {
         options: {
-          basedir:"src/jade/",
+          basedir:"app/views/",
           pretty:true,
           data: {
             debug: false
           }
         },
-        files: getFiles('<%%=configger.src%>/jade/', '<%%=configger.src%>/', '*.jade','html')
+        files: getFiles('app/views/', 'app/', '*.jade','html')
       }
     },<%}%>  
     clean: {
@@ -55,7 +57,7 @@ var mountFolder = function (connect, dir) {
         files: [{
           expand: true,
           dot: true,
-          cwd: '<%%=configger.src%>',
+          cwd: '<%%=configger.app%>',
           dest: '<%%=configger.dist%>',
           src: [
             '*.{ico,png,txt}',
@@ -69,19 +71,12 @@ var mountFolder = function (connect, dir) {
   stylus: {
     compile: {
       files: {
-      'css/nstyle.css': 'css/nstyle.styl', 
+      'styles/style.css': 'styles/style.styl', 
       }
     }
     },
     <%}%>  
     watch: {
-        scripts: {
-          files: ['css/*.styl'],
-          tasks:['stylus'],
-          options: {
-            livereload: false
-          },
-        },
       livereload: {
         options: {
           livereload: LIVERELOAD_PORT
@@ -115,26 +110,7 @@ var mountFolder = function (connect, dir) {
             return [
               lrSnippet,
               mountFolder(connect, '.tmp'),
-              mountFolder(connect, configger.app)
-            ];
-          }
-        }
-      },
-      test: {
-        options: {
-          middleware: function (connect) {
-            return [
-              mountFolder(connect, '.tmp'),
-              mountFolder(connect, 'test')
-            ];
-          }
-        }
-      },
-      dist: {
-        options: {
-          middleware: function (connect) {
-            return [
-              mountFolder(connect, configger.dist)
+              mountFolder(connect, globalConfig.app)
             ];
           }
         }
@@ -177,14 +153,14 @@ var mountFolder = function (connect, dir) {
   });
 
   
-  grunt.registerTask('default', ['watch']);
+  grunt.registerTask('default', 'watch');
 
-  grunt.registerTask('server', function (target) {
-    grunt.task.run([
+  grunt.registerTask('server', [
+      'jade',
       'connect:livereload',
-      'open',
+      'open:server',
       'watch'
-    ]);
-  });
+    ]
+  );
 
 };

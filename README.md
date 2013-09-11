@@ -2,7 +2,7 @@
 
 A generator for [Yeoman](http://yeoman.io).
 
-Generator that gives you ability to rapidly scaffold a front-end development app. Named afred Barry Allen, "The Flash".
+Generator that gives you ability to rapidly scaffold a front-end development app. Named after Barry Allen, "The Flash".
 
 Currently includes the ability to choose to generate simple app structure with:
 - jade

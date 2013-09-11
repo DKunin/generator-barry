@@ -1,7 +1,7 @@
 {
   "name": "<%= _.slugify(projectName) %>",
   "version": "0.0.0",
-   "description": "Sample Jader Project",
+   "description": "Sample Barry Project",
   "dependencies": {
   },
   <% if (gitUser) { %>

@@ -1,6 +1,6 @@
 {
   "name": "generator-barry",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A generator for Yeoman. Generator that gives you ability to rapidly scaffold a front-end development app. With Jade and Stylus.",
   "keywords": [
     "yeoman-generator",

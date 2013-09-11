@@ -12,6 +12,10 @@ Currently includes the ability to choose to generate simple app structure with:
 - Connect for creating simple server, delivering the static in app folder
 - Livereloading
 
+#Install 
+
+      npm install -g generator-angular
+
 #Usage 
 
       yo barry

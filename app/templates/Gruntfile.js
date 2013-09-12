@@ -71,7 +71,7 @@ var mountFolder = function (connect, dir) {
   stylus: {
     compile: {
       files: {
-      'styles/style.css': 'styles/style.styl', 
+      '<%%= configger.app %>/styles/style.css': '<%%= configger.app %>/styles/style.styl', 
       }
     }
     },
@@ -83,11 +83,11 @@ var mountFolder = function (connect, dir) {
         },
         files: [
           '<%%= configger.app %>/{,*/}*.jade',
-          '{.tmp,<%%= configger.app %>}/styles/{,*/}*.css',
+          '{.tmp,<%%= configger.app %>}/styles/{,*/}*.styl',
           '{.tmp,<%%= configger.app %>}/scripts/{,*/}*.js',
           '<%%= configger.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
         ],
-        tasks: ['jade']
+        tasks: ['stylus','jade']
       }
     },
     open: {
@@ -116,6 +116,7 @@ var mountFolder = function (connect, dir) {
         }
       }
     },
+    <% if (minify) { %>
     useminPrepare: {
       html: '<%%= configger.app %>/index.html',
       options: {
@@ -131,17 +132,6 @@ var mountFolder = function (connect, dir) {
     },
     htmlmin: {
       dist: {
-        options: {
-          /*removeCommentsFromCDATA: true,
-          // https://github.com/yeoman/grunt-usemin/issues/44
-          //collapseWhitespace: true,
-          collapseBooleanAttributes: true,
-          removeAttributeQuotes: true,
-          removeRedundantAttributes: true,
-          useShortDoctype: true,
-          removeEmptyAttributes: true,
-          removeOptionalTags: true*/
-        },
         files: [{
           expand: true,
           cwd: '<%%= configger.app %>',
@@ -149,7 +139,16 @@ var mountFolder = function (connect, dir) {
           dest: '<%%= configger.dist %>'
         }]
       }
-    },            
+    },
+    uglify: {
+      options: {
+        banner: '<%%= banner %>'
+      },
+      dist: {
+        files: {}
+      }
+    },
+    <%}%>            
   });
 
   

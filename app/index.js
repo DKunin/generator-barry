@@ -59,13 +59,19 @@ GeneratorJaderGenerator.prototype.askForModules = function askForModules() {
       value: 'stylusModule',
       name: 'stylus',
       checked: true
-    }]
+    }, {
+      value: 'minificationModules',
+      name: 'minification',
+      checked: true
+    }
+    ]
   }];
 
   this.prompt(prompts, function (props) {
     var hasMod = function (mod) { return props.modules.indexOf(mod) !== -1; };
     this.jadeModule = hasMod('jadeModule');
     this.stylusModule = hasMod('stylusModule');
+    this.minify = hasMod('minificationModules');
     cb();
   }.bind(this));
 };
@@ -91,7 +97,11 @@ GeneratorJaderGenerator.prototype.app = function app() {
   this.template('jade/layouts/partials/_html-header.jade', viewsFolder +'/layouts/partials/_html-header.jade');
   
   //Styles
-  this.template('_style.styl', 'app/styles/style.styl');
+  this.template('styles/_style.styl', 'app/styles/style.styl');
+  this.template('styles/_mixins.styl', 'app/styles/_mixins.styl');
+  this.template('styles/_pure.styl', 'app/styles/_pure.styl');
+  this.template('styles/_pure.css', 'app/styles/_pure.css');
+  this.template('styles/_color.styl', 'app/styles/_color.styl');
   
   //DevFiles
   this.template('Gruntfile.js', 'Gruntfile.js');

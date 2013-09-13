@@ -155,6 +155,7 @@ var mountFolder = function (connect, dir) {
   grunt.registerTask('default', 'watch');
 
   grunt.registerTask('server', [
+      'stylus',
       'jade',
       'connect:livereload',
       'open:server',

@@ -5,8 +5,65 @@
 body
   background-color: silver
 .welcome
-  background-color: cloud
-  padding: 10px 20px
+  background-color: clouds
+  padding: 5px 20px 40px 20px
   margin-top: 10px
   border-radius: 2px
   text-align: center
+  overflow: hidden
+  blockquote
+    background-color: pomegrante
+    color: clouds
+    padding: 5px
+    
+    position: relative
+    border-bottom: 2px solid pomegrante
+    left: 80px
+    animation: flash 5s infinite ease-out
+    &:before
+      content: "≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡"
+      position: absolute
+      color: pomegrante
+      font-size: 54px
+      letter-spacing: -10px
+      left: -444px
+      top: -17px
+      font-weight: bold
+      animation: flash2 5s infinite ease-out
+
+@-webkit-keyframes flash 
+  0%,100% 
+    left:0
+    opacity: 1
+    transform: skewX(0deg) 
+  20% 
+    left:0
+    opacity: 1
+  40% 
+    left:0
+    opacity: 1
+    transform: skewX(-6deg)     
+  50% 
+    left:750px 
+    opacity: 0
+    transform: skewX(-12deg)  
+  70% 
+    left:-550px 
+    opacity: 0 
+  80% 
+    left:-150px 
+    opacity: 1 
+
+@-webkit-keyframes flash2
+  0%,100% 
+    opacity: 0
+  20% 
+    opacity: 0
+  40% 
+    opacity: 0
+  50% 
+    opacity: 1
+  70% 
+    opacity: 1 
+  80% 
+    opacity: .5 

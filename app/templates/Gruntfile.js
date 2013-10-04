@@ -87,7 +87,11 @@ var mountFolder = function (connect, dir) {
           '{.tmp,<%%= configger.app %>}/scripts/{,*/}*.js',
           '<%%= configger.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
         ],
-        tasks: ['stylus','jade']
+        tasks: [
+        <% if (stylusModule) { %>'stylus',<%}%>
+        
+        <% if (jadeModule) { %>'jade'<%}%>
+        ]
       }
     },
     open: {
@@ -155,8 +159,8 @@ var mountFolder = function (connect, dir) {
   grunt.registerTask('default', 'watch');
 
   grunt.registerTask('server', [
-      'stylus',
-      'jade',
+    <% if (stylusModule) { %>'stylus',<%}%>      
+    <% if (jadeModule) { %>'jade',<%}%>
       'connect:livereload',
       'open:server',
       'watch'

@@ -1,0 +1,18 @@
+@import "_pure.css";
+body{background-color:#bdc3c7}
+.welcome{background-color:#ecf0f1;padding:5px 20px 40px 20px;margin-top:10px;-webkit-border-radius:2px;-moz-border-radius:2px;-o-border-radius:2px;border-radius:2px;text-align:center;overflow:hidden;}
+.welcome blockquote{background-color:#c0392b;color:#ecf0f1;padding:5px;position:relative;border-bottom:2px solid #c0392b;left:80px;-webkit-animation:flash 5s infinite ease-out;-moz-animation:flash 5s infinite ease-out;-o-animation:flash 5s infinite ease-out;animation:flash 5s infinite ease-out;}
+.welcome blockquote:before{content:"≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡";position:absolute;color:#c0392b;font-size:54px;letter-spacing:-10px;left:-444px;top:-17px;font-weight:bold;-webkit-animation:flash2 5s infinite ease-out;-moz-animation:flash2 5s infinite ease-out;-o-animation:flash2 5s infinite ease-out;animation:flash2 5s infinite ease-out}
+@-webkit-keyframes flash{0%,100%{left:0;opacity:1;-webkit-transform:skewX(0);-moz-transform:skewX(0);-o-transform:skewX(0);transform:skewX(0)}
+20%{left:0;opacity:1}
+40%{left:0;opacity:1;-webkit-transform:skewX(-6deg);-moz-transform:skewX(-6deg);-o-transform:skewX(-6deg);transform:skewX(-6deg)}
+50%{left:750px;opacity:0;-webkit-transform:skewX(-12deg);-moz-transform:skewX(-12deg);-o-transform:skewX(-12deg);transform:skewX(-12deg)}
+70%{left:-550px;opacity:0}
+80%{left:-150px;opacity:1}
+}@-webkit-keyframes flash2{0%,100%{opacity:0}
+20%{opacity:0}
+40%{opacity:0}
+50%{opacity:1}
+70%{opacity:1}
+80%{opacity:.5}
+}

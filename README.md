@@ -20,5 +20,16 @@ Currently includes the ability to choose to generate simple app structure with:
 
       yo barry
 
-#To-do soon
-- add minification modules
+#To-do
+- add HAML
+- add LESS
+- add SASS
+
+#Changelog
+
+##0.1.5
+- Added grunt-time, for measuring elapsed time for grunt tasks
+
+##0.1.4
+- Added minification
+- Switched inclusion of scripts to radio-like selection choice  

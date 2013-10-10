@@ -27,7 +27,8 @@ var mountFolder = function (connect, dir) {
     globalConfig.app = require('./bower.json').appPath || globalConfig.app;
   } catch (e) {}
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
-
+  require('time-grunt')(grunt);
+  
   grunt.initConfig({  
     configger: globalConfig,
     pkg: grunt.file.readJSON('package.json'),

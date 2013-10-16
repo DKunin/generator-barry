@@ -14,7 +14,7 @@ Currently includes the ability to choose to generate simple app structure with:
 
 #Install 
 
-      npm install -g generator-angular
+      npm install -g generator-barry
 
 #Usage 
 

@@ -27,6 +27,9 @@ Currently includes the ability to choose to generate simple app structure with:
 
 #Changelog
 
+##0.1.7
+- Added module grunt-size-report
+
 ##0.1.6
 - Fixed a typo in README.md
 

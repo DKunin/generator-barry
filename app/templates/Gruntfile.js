@@ -153,7 +153,32 @@ var mountFolder = function (connect, dir) {
         files: {}
       }
     },
-    <%}%>            
+    <%}%>    
+    size_report: {
+        html: {
+            files: {
+                list: [
+                '<%= configger.app %>/*.html', 
+                '<%= configger.app %>/views/**/*.jade',
+                ]
+            },
+        },        
+        styles: {
+            files: {
+                list: [
+                '<%= configger.app %>/styles/*.styl',
+                '<%= configger.app %>/styles/*.css'
+                ]
+            },
+        }, 
+        assets: {
+            files: {
+                list: [
+                '<%= configger.app %>/assets/*.*'
+                ]
+            },
+        }
+    }          
   });
 
   

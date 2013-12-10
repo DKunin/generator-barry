@@ -1,5 +1,7 @@
 # generator-barry 
 
+[![NPM version](https://badge.fury.io/js/generator-barry.png)](http://badge.fury.io/js/generator-barry)
+
 A generator for [Yeoman](http://yeoman.io).
 
 Generator that gives you ability to rapidly scaffold a front-end development app. Named after Barry Allen, "The Flash".
@@ -7,6 +9,7 @@ Generator that gives you ability to rapidly scaffold a front-end development app
 Currently includes the ability to choose to generate simple app structure with:
 - jade
 - stylus
+- minification
 
 ## Helping components
 - Connect for creating simple server, delivering the static in app folder
@@ -16,14 +19,21 @@ Currently includes the ability to choose to generate simple app structure with:
 
       npm install -g generator-barry
 
-#Usage 
+#Start 
 
       yo barry
 
+#Usage 
+Run command to serve static files/or live generation of jade/stylus
+      
+      grunt 
+      // or
+      grunt serve
+
 #To-do
 - add HAML
-- add LESS
-- add SASS
+- add LESS, SASS
+- add image optimization
 
 #Changelog
 

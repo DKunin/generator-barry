@@ -184,7 +184,7 @@ var mountFolder = function (connect, dir) {
   
   grunt.registerTask('default', 'watch');
 
-  grunt.registerTask('server', [
+  grunt.registerTask('serve', [
     <% if (stylusModule) { %>'stylus',<%}%>      
     <% if (jadeModule) { %>'jade',<%}%>
       'connect:livereload',

@@ -36,6 +36,9 @@ Run command to serve static files/or live generation of jade/stylus
 
 #Changelog
 
+##0.1.8
+- Updated dependencies
+
 ##0.1.7
 - Added module grunt-size-report
 

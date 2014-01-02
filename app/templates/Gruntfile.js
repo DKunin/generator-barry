@@ -58,8 +58,8 @@ var mountFolder = function (connect, dir) {
         files: [{
           expand: true,
           dot: true,
-          cwd: '<%%=configger.app%>',
-          dest: '<%%=configger.dist%>',
+          cwd: '<%%= configger.app %>',
+          dest: '<%%= configger.dist %>',
           src: [
             '*.{ico,png,txt}',
             'images/{,*/}*.{gif,webp,png}',
@@ -158,23 +158,23 @@ var mountFolder = function (connect, dir) {
         html: {
             files: {
                 list: [
-                '<%= configger.app %>/*.html', 
-                '<%= configger.app %>/views/**/*.jade',
+                '<%%= configger.app %>/*.html', 
+                '<%%= configger.app %>/views/**/*.jade',
                 ]
             },
         },        
         styles: {
             files: {
                 list: [
-                '<%= configger.app %>/styles/*.styl',
-                '<%= configger.app %>/styles/*.css'
+                '<%%= configger.app %>/styles/*.styl',
+                '<%%= configger.app %>/styles/*.css'
                 ]
             },
         }, 
         assets: {
             files: {
                 list: [
-                '<%= configger.app %>/assets/*.*'
+                '<%%= configger.app %>/assets/*.*'
                 ]
             },
         }

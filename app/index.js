@@ -5,6 +5,10 @@ var yeoman = require('yeoman-generator');
 
 
 var GeneratorJaderGenerator = module.exports = function GeneratorJaderGenerator(args, options, config) {
+  this.templateSettings = {
+  'interpolate': /{{([\s\S]+?)}}/g
+  };
+
   yeoman.generators.Base.apply(this, arguments);
 
   this.on('end', function () {
@@ -115,6 +119,8 @@ GeneratorJaderGenerator.prototype.app = function app() {
   this.template('Gruntfile.js', 'Gruntfile.js');
   this.template('_package.json', 'package.json');
   this.template('_bower.json', 'bower.json');
+  
+  //this.template('test.js', 'test.js');
 };
 
 GeneratorJaderGenerator.prototype.projectfiles = function projectfiles() {

@@ -1,6 +1,6 @@
 {
   "name": "generator-barry",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "A generator for Yeoman. Generator that gives you ability to rapidly scaffold a front-end development app. With Jade and Stylus.",
   "keywords": [
     "yeoman-generator",
@@ -29,7 +29,7 @@
     "url": "git://github.com/dkunin/generator-barry.git"
   },
   "dependencies": {
-    "yeoman-generator": "~0.14.1"
+    "yeoman-generator": "~0.14.2"
   },
   "devDependencies": {
     "grunt": "~0.4.2",

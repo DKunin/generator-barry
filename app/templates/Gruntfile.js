@@ -85,7 +85,7 @@ var mountFolder = function (connect, dir) {
         files: [
           '<%%= configger.app %>/{,*/}*.jade',
           '{.tmp,<%%= configger.app %>}/styles/{,*/}*.styl',
-          '{.tmp,<%%= configger.app %>}/scripts/{,*/}*.js',
+          '{.tmp,<%%= configger.app %>}/js/{,*/}*.js',
           '<%%= configger.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
         ],
         tasks: [

@@ -85,9 +85,12 @@ GeneratorJaderGenerator.prototype.app = function app() {
   
   //Folders
   this.mkdir('app');
-  this.mkdir('app/views');  
-  this.mkdir('app/views/layouts');  
-  this.mkdir('app/views/layouts/partials');  
+
+  if(this.jadeModule) {
+    this.mkdir('app/views');  
+    this.mkdir('app/views/layouts');  
+    this.mkdir('app/views/layouts/partials');  
+  }
   this.mkdir('app/styles');
   this.mkdir('app/js');
   this.mkdir('app/assets');
@@ -105,15 +108,18 @@ GeneratorJaderGenerator.prototype.app = function app() {
   
   //Styles
   if(this.stylusModule) {
-  this.template('styles/_style.styl', 'app/styles/style.styl');
-  this.template('styles/_mixins.styl', 'app/styles/_mixins.styl');
-  this.template('styles/_pure.styl', 'app/styles/_pure.styl');
-  this.template('styles/_pure.css', 'app/styles/_pure.css');
-  this.template('styles/_color.styl', 'app/styles/_color.styl');
+    this.template('styles/_style.styl', 'app/styles/style.styl');
+    this.template('styles/_mixins.styl', 'app/styles/_mixins.styl');
+    this.template('styles/_pure.styl', 'app/styles/_pure.styl');
+    this.template('styles/_pure.css', 'app/styles/_pure.css');
+    this.template('styles/_color.styl', 'app/styles/_color.styl');
   } else {
-  this.template('styles/_pure.css', 'app/styles/_pure.css');
+    this.template('styles/_pure.css', 'app/styles/_pure.css');
     this.template('style.css', 'app/styles/style.css');
   }
+  
+  //Javascript Files
+  this.template('_main.js', 'app/js/main.js');
   
   //DevFiles
   this.template('Gruntfile.js', 'Gruntfile.js');

@@ -36,6 +36,15 @@ Run command to serve static files/or live generation of jade/stylus
 
 #Changelog
 
+##0.1.10
+- Updated dependencies
+- Added empty js file to start with
+- Updated grunt file - so watch would see the js folder
+- When there is no need in jade - the view folder doesn't build
+
+##0.1.9
+- Fixed minor bugs
+
 ##0.1.8
 - Updated dependencies
 
